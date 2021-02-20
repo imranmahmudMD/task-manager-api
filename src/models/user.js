@@ -67,7 +67,7 @@ userSchema.virtual('tasks', {
 userSchema.methods.toJSON = function () {
     const user = this
     const userObject = user.toObject()
-    // items to remove from user object
+    // items to remove from user object upon return
     delete userObject.password
     delete userObject.avatar
     delete userObject.tokens
