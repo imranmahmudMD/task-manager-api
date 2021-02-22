@@ -7,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const sendWelcomeEmail = (email, name) => {
     sgMail.send({
         to: email,
-        from: 'imran@mail.harvard.edu',
+        from: process.env.TEST_EMAIL,
         subject: 'Welcome to the task app!',
         text: `Welcome to the app, ${name}. Let me know how you get along and if you are finding it useful?`
     })
@@ -18,7 +18,7 @@ const sendWelcomeEmail = (email, name) => {
 const sendCancelEmail = (email, name) => {
     sgMail.send({
         to: email,
-        from: 'imran@mail.harvard.edu',
+        from: process.env.TEST_EMAIL,
         subject: 'We are sorry to see you go..',
         text: `Hi ${name}. I'm really sorry that you have decided to cancel. If there is anything we can do to change your mind, just reply to this email. We would also like to know how we can improve our service for future customers... any advice you can share would be appreciated`
     })
